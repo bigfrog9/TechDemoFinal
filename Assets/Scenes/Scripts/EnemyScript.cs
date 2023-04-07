@@ -8,12 +8,6 @@ public class EnemyScript : MonoBehaviour
 
     public bool Gopoint2 = false;
 
-    public GameObject Player;
-
-    public Spawn spawn;
-
-    public Key key;
-
     public Vector3 point1;
 
     public Vector3 point2;
@@ -51,21 +45,10 @@ public class EnemyScript : MonoBehaviour
             Gopoint2 = false;
         }
 
+       
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == Player)
-        {
-            Player.GetComponent<CharacterController>().enabled = false;
+    
 
-            Player.transform.position = spawn.SpawnPoint;
-
-            Player.GetComponent<CharacterController>().enabled = true;
-
-            key.HasKey = false;
-
-            key.gameObject.SetActive(true);
-        }
-    }
+    
 }
